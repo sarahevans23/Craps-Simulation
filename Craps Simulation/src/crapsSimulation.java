@@ -24,28 +24,27 @@ public static void main(String[] args)
 	{
 		Scanner userInput = new Scanner(System.in);
 		System.out.println("Hello! What is your name?");
-		String userName = userInput.nextLine();
-		System.out.println("Nice to meet you " + userName + ".");
+		userName = userInput.nextLine();
+		System.out.println("Nice to meet you, " + userName + ".");
 	}
 	
 	public static void getDice()
 	{
 		System.out.println("Let's get right into it!");
-		boolean isRolling = true;
-		boolean isRolling1 = true;
+		isRolling = true;
 		while (isRolling = true)
 		{
-		int dice1 = (int)(Math.random()* 7) + 1; 
-		int dice2 = (int)(Math.random()* 7) + 1; 
-		int totalDice = dice1 + dice2;
-		rollDice();
-		rollAgain(); 
+		dice1 = (int)(Math.random()* 7) + 1; 
+	    dice2 = (int)(Math.random()* 7) + 1; 
+	    totalDice = dice1 + dice2;
+	    rollDice();
+	    rollAgain(); 
 		}
+	 
 	}
 		
 	public static void rollDice()
 	{
-		System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice);
 		if (totalDice == 2 || totalDice == 12)
 		{
 			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice + ". You lose, " + userName + ".");
@@ -57,37 +56,43 @@ public static void main(String[] args)
 			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice + ". You win, " + userName + "!");
 			isRolling = false;
 		}
+		
+		else 
+		{
+			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice);
+		}
 	}
 
-		public static void rollAgain()
+		 public static void rollAgain()
 		{
+			isStillRolling = true; 
 			while (isStillRolling = true)
 			{ 
-				int point = totalDice; 
-				System.out.println("Your point is: " + point + ", " + userName + ". Press enter to roll again!");
-				String dummy1 = userInput.nextLine();
-				isStillRolling = true; 		
-			}
+			    point = totalDice; 
+				System.out.println("Your point is: " + point + ", " + userName + ". Press enter to roll again!"); 	
+		    	isStillRolling = false;
+			
 			
 			if (totalDice == point)
-			{
+				{
 				System.out.println("Congrats! You rolled a " + point + " which is your point! You won, " + userName + "!");
 				isStillRolling = false; 
+				isRolling = false;
 			}
 			
 			if (totalDice == 7)
 			{
 				System.out.println("You rolled a 7. You lose," + userName + ".");
 				isStillRolling = false; 
+				isRolling = false; 
 	     	}
 			
 			else
 			{
 				isRolling = true;
-				isStillRolling = true; 
 			}
 			
-			
+			}
 		}
-}
+	}
 
