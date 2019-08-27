@@ -37,8 +37,8 @@ public static void main(String[] args)
 		dice1 = (int)(Math.random()* 7) + 1; 
 	    dice2 = (int)(Math.random()* 7) + 1; 
 	    totalDice = dice1 + dice2;
-	    rollDice();
-	    rollAgain(); 
+	    rollDice(); 
+	    rollAgain();
 		}
 	 
 	}
@@ -60,17 +60,17 @@ public static void main(String[] args)
 		else 
 		{
 			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice);
+			isRolling = false; 
 		}
 	}
 
 		 public static void rollAgain()
 		{
 			isStillRolling = true; 
+			point = totalDice;
 			while (isStillRolling = true)
 			{ 
-			    point = totalDice; 
-				System.out.println("Your point is: " + point + ", " + userName + ". Press enter to roll again!"); 	
-		    	isStillRolling = false;
+				System.out.println("Your point is: " + point + ", " + userName + "."); 
 			
 			
 			if (totalDice == point)
