@@ -5,6 +5,7 @@ public class crapsSimulation
 {
 	static String userName; 
 	static Scanner userInput; 
+	static Scanner userInput1;
 	static int dice1;
 	static int dice2;
 	static int totalDice;
@@ -31,17 +32,24 @@ public static void main(String[] args)
 	public static void getDice()
 	{
 		System.out.println("Let's get right into it!");
+		isStillRolling = true; 
 		isRolling = true;
 		while (isRolling = true)
 		{
-		dice1 = (int)(Math.random()* 7) + 1; 
-	    dice2 = (int)(Math.random()* 7) + 1; 
-	    totalDice = dice1 + dice2;
-	    rollDice(); 
-	    rollAgain();
-		}
-	 
+			dice1 = (int)(Math.random()* 7) + 1; 
+		    dice2 = (int)(Math.random()* 7) + 1;
+		    totalDice = dice1 + dice2;
+		    rollDice();
+		    
+			while (isStillRolling = true)
+			{
+				rollAgain(); 
+				dice1 = (int)(Math.random()* 7) + 1; 
+				dice2 = (int)(Math.random()* 7) + 1; 
+				totalDice = dice1 + dice2;
+			}
 	}
+}
 		
 	public static void rollDice()
 	{
@@ -49,30 +57,30 @@ public static void main(String[] args)
 		{
 			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice + ". You lose, " + userName + ".");
 			isRolling = false;
+			isStillRolling = false;
 		}
 		
 		if (totalDice == 7 || totalDice == 11)
 		{
 			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice + ". You win, " + userName + "!");
 			isRolling = false;
+			isStillRolling = false;
 		}
 		
 		else 
 		{
-			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice);
-			isRolling = false; 
+			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice); 
+			isStillRolling = true;
 		}
 	}
 
 		 public static void rollAgain()
-		{
-			isStillRolling = true; 
+		{ 
 			point = totalDice;
-			while (isStillRolling = true)
-			{ 
-				System.out.println("Your point is: " + point + ", " + userName + "."); 
-			
-			
+				System.out.println("Your point is: " + point + ", " + userName + ". Press enter to keep going!"); 
+				String dummy = userInput1.nextLine(); 
+				isRolling = true; 
+				
 			if (totalDice == point)
 				{
 				System.out.println("Congrats! You rolled a " + point + " which is your point! You won, " + userName + "!");
@@ -92,7 +100,6 @@ public static void main(String[] args)
 				isRolling = true;
 			}
 			
-			}
-		}
-	}
+	 }
+}
 
