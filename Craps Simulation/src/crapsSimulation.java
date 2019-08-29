@@ -33,37 +33,30 @@ public static void main(String[] args)
 	{
 		System.out.println("Let's get right into it!");
 		isStillRolling = true; 
-		isRolling = true;
-		while (isRolling = true)
-		{
-			dice1 = (int)(Math.random()* 7) + 1; 
-		    dice2 = (int)(Math.random()* 7) + 1;
-		    totalDice = dice1 + dice2;
-		    rollDice();
-		    
-			while (isStillRolling = true)
+		dice1 = (int)(Math.random()* 7) + 1; 
+	    dice2 = (int)(Math.random()* 7) + 1;
+	    totalDice = dice1 + dice2;
+		   while (isStillRolling = true)
 			{
+				rollDice();
 				rollAgain(); 
 				dice1 = (int)(Math.random()* 7) + 1; 
 				dice2 = (int)(Math.random()* 7) + 1; 
 				totalDice = dice1 + dice2;
 			}
 	}
-}
 		
 	public static void rollDice()
 	{
 		if (totalDice == 2 || totalDice == 12)
 		{
 			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice + ". You lose, " + userName + ".");
-			isRolling = false;
 			isStillRolling = false;
 		}
 		
 		if (totalDice == 7 || totalDice == 11)
 		{
 			System.out.println("You rolled a " + dice1 + " and a " + dice2 + " for a total of " + totalDice + ". You win, " + userName + "!");
-			isRolling = false;
 			isStillRolling = false;
 		}
 		
@@ -76,30 +69,29 @@ public static void main(String[] args)
 
 		 public static void rollAgain()
 		{ 
-			point = totalDice;
+			    point = totalDice;
 				System.out.println("Your point is: " + point + ", " + userName + ". Press enter to keep going!"); 
 				String dummy = userInput1.nextLine(); 
-				isRolling = true; 
+				isStillRolling = true; 
 				
-			if (totalDice == point)
+			if (point == totalDice)
 				{
-				System.out.println("Congrats! You rolled a " + point + " which is your point! You won, " + userName + "!");
+				System.out.println("Congrats! You rolled a " + totalDice + " which is your point! You won, " + userName + "!");
 				isStillRolling = false; 
-				isRolling = false;
-			}
+			    }
 			
 			if (totalDice == 7)
 			{
 				System.out.println("You rolled a 7. You lose," + userName + ".");
 				isStillRolling = false; 
-				isRolling = false; 
 	     	}
 			
 			else
 			{
 				isRolling = true;
 			}
-			
-	 }
+		
+		}		
+	 
 }
 
