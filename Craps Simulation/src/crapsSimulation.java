@@ -91,9 +91,8 @@ public static void main(String[] args)
 			{
 				isRolling = true;
 			}
-			// good luck trying to solve this.... yikes :)
-				// JK PUSH THROUGH!! YOU CAN DO IT!!!
-				// I BELIEVE IN THEE!!!!!!!!!!
+
+			// yolo 
 			}
 		}
 	}
